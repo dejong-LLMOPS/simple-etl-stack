@@ -1,0 +1,12 @@
+simple_etl:
+  target: dev
+  outputs:
+    dev:
+      type: postgres
+      host: postgres
+      user: myuser
+      password: mypassword
+      port: 5432
+      dbname: mydb
+      schema: public
+      threads: 2

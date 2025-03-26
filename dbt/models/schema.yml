@@ -1,0 +1,53 @@
+version: 2
+
+models:
+  - name: customers
+    description: "Customer master data"
+    columns:
+      - name: customer_id
+        description: "Unique ID for each customer"
+        tests:
+          - unique
+          - not_null
+      - name: full_name
+      - name: email
+      - name: phone_number
+      - name: region
+      - name: created_at
+
+  - name: products
+    description: "Product master data"
+    columns:
+      - name: product_id
+        tests:
+          - unique
+          - not_null
+      - name: name
+      - name: category
+      - name: price
+      - name: in_stock
+
+  - name: sales
+    description: "Sales transactions"
+    columns:
+      - name: sale_id
+        tests:
+          - unique
+          - not_null
+      - name: customer_id
+      - name: product_id
+      - name: sale_date
+      - name: quantity
+      - name: amount
+
+  - name: dates
+    description: "Calendar table"
+    columns:
+      - name: date
+        tests:
+          - unique
+          - not_null
+      - name: year
+      - name: month
+      - name: day
+      - name: quarter
